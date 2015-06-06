@@ -13,45 +13,65 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="250dp" />
 
-    <GridLayout
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:orientation="vertical"
         android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        android:layout_centerVertical="true"
-        android:layout_centerHorizontal="true"
-        android:columnCount="2"
-        android:rowCount="2">
+        android:layout_height="wrap_content" >
 
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="New Button"
-            android:id="@+id/button"
-            android:layout_row="0"
-            android:layout_column="0" />
+        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:orientation="horizontal"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_weight="1">
 
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="New Button"
-            android:id="@+id/button2"
-            android:layout_row="0"
-            android:layout_column="1" />
+            <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:id="@+id/imageButton1"
+                android:layout_row="0"
+                android:layout_column="0"
+                android:src="@drawable/human" />
 
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="New Button"
-            android:id="@+id/button3"
-            android:layout_row="1"
-            android:layout_column="0" />
+            <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:id="@+id/imageButton2"
+                android:layout_row="0"
+                android:layout_column="1"
+                android:src="@drawable/orc" />
 
-        <Button
-            android:layout_width="wrap_content"
+
+        </LinearLayout>
+
+        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:orientation="horizontal"
+            android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:text="New Button"
-            android:id="@+id/button4"
-            android:layout_row="1"
-            android:layout_column="1" />
-    </GridLayout>
+            android:layout_weight="1">
+
+            <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:id="@+id/imageButton3"
+                android:layout_row="0"
+                android:layout_column="0"
+                android:src="@drawable/undead" />
+
+            <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:id="@+id/imageButton4"
+                android:layout_row="0"
+                android:layout_column="1"
+                android:src="@drawable/elf" />
+
+
+        </LinearLayout>
+
+    </LinearLayout>
 
 </RelativeLayout>
