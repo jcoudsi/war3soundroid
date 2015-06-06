@@ -16,6 +16,22 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".RaceUnitSelectorActivity"
+            android:label="@string/title_activity_race_unit_selector"
+            android:parentActivityName=".RaceSelectorActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.work.crazy.war3soundroid.RaceSelectorActivity" />
+        </activity>
+        <activity
+            android:name=".RaceUnitSoundsList"
+            android:label="@string/title_activity_race_unit_sounds_list"
+            android:parentActivityName=".RaceUnitSelectorActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.work.crazy.war3soundroid.RaceUnitSelectorActivity" />
+        </activity>
     </application>
 
 </manifest>
