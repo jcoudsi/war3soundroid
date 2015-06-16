@@ -32,7 +32,7 @@ public class RaceUnitSelectorActivity extends ActionBarActivity {
 
         setTitle(this.getActivityTitle(raceEnum));
 
-        this.raceUnitListView = (ListView)findViewById(R.id.raceUnitListView);
+        this.raceUnitListView = (ListView) findViewById(R.id.raceUnitListView);
         ListAdapter listAdapter = new UnitAdapter(this, android.R.layout.simple_list_item_1, unitsList);
         this.raceUnitListView.setAdapter(listAdapter);
     }
