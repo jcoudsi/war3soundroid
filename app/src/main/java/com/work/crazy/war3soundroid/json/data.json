@@ -1,0 +1,28 @@
+{
+  "human": [
+    {
+      "name": "Peasant",
+      "resourceName": "human_peasant",
+      "sounds": [
+        {
+          "name": "Prêt à travailler",
+          "resourceName": "ready_to_work"
+        },
+        {
+          "name": "Oui messire",
+          "resourceName": "yes_mylord"
+        }
+      ]
+    },
+    {
+      "name": "Rifle man",
+      "resourceName": "human_rifleman",
+      "sounds": []
+    },
+    {
+      "name": "Knight",
+      "resourceName": "human_knight",
+      "sounds": []
+    }
+  ]
+}
