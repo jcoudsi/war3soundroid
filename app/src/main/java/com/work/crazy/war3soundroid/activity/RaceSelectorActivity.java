@@ -81,7 +81,7 @@ public class RaceSelectorActivity extends ActionBarActivity {
 
         /*Button soundTestButton = (Button)findViewById(R.id.soundTestButton);
 
-        final MediaPlayer mediaPlayer = MediaPlayer.create(this, R.raw.son1);
+        final MediaPlayer mediaPlayer = MediaPlayer.create(this, R.raw.human_peasant_ready_to_work);
 
         soundTestButton.setOnTouchListener(new View.OnTouchListener() {
             @Override
@@ -102,8 +102,8 @@ public class RaceSelectorActivity extends ActionBarActivity {
 
         Unit peasant = new Unit("Paysan", R.drawable.human_peasant);
         ArrayList<Sound> peasantSoundList = new ArrayList<Sound>();
-        peasantSoundList.add(new Sound("Prêt à travailler", R.raw.son1));
-        peasantSoundList.add(new Sound("Oui messire", R.raw.son2));
+        peasantSoundList.add(new Sound("Prêt à travailler", R.raw.human_peasant_ready_to_work));
+        peasantSoundList.add(new Sound("Oui messire", R.raw.human_peasant_yes_mylord));
         peasant.setSoundList(peasantSoundList);
 
         Unit rifleman = new Unit("Fusiller", R.drawable.human_rifleman);
