@@ -45,13 +45,13 @@ public class RaceUnitSelectorActivity extends ActionBarActivity {
 
         switch (raceEnum) {
             case Human:
-                return "Humains";
+                return getResources().getString(R.string.humans);
             case Orc:
-                return "Orcs";
+                return getResources().getString(R.string.orcs);
             case Undead:
-                return "Morts-vivants";
+                return getResources().getString(R.string.undead);
             case Elf:
-                return "Elfes";
+                return getResources().getString(R.string.elfs);
             default:
                 return "";
         }
