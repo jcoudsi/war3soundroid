@@ -22,10 +22,12 @@ public class Unit implements Parcelable {
 
     private String name;
     private int imageResourceId;
+    private ArrayList<Sound> soundList;
 
     public Unit(Parcel in) {
         this.name = in.readString();
         this.imageResourceId = in.readInt();
+        this.soundList = in.readArrayList(Sound.class.getClassLoader());
     }
 
     public Unit(String name, int imageResourceId) {
@@ -49,6 +51,14 @@ public class Unit implements Parcelable {
         this.imageResourceId = imageResourceId;
     }
 
+    public ArrayList<Sound> getSoundList() {
+        return soundList;
+    }
+
+    public void setSoundList(ArrayList<Sound> soundList) {
+        this.soundList = soundList;
+    }
+
     @Override
     public int describeContents() {
         return 0;
@@ -58,5 +68,6 @@ public class Unit implements Parcelable {
     public void writeToParcel(Parcel dest, int flags) {
         dest.writeString(this.name);
         dest.writeInt(this.imageResourceId);
+        dest.writeList(this.soundList);
     }
 }
