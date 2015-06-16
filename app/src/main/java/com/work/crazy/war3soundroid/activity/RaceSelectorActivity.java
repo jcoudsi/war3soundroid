@@ -3,7 +3,6 @@ package com.work.crazy.war3soundroid.activity;
 import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
-import android.view.MotionEvent;
 import android.view.View;
 import android.widget.ImageButton;
 
@@ -29,10 +28,10 @@ public class RaceSelectorActivity extends ActionBarActivity {
     private ArrayList<Unit> undeadUnitList;
     private ArrayList<Unit> elfUnitList;
 
-    private View.OnTouchListener onRaceButtonTouchListener = new View.OnTouchListener() {
+    private View.OnClickListener onRaceButtonClickListener = new View.OnClickListener() {
 
         @Override
-        public boolean onTouch(View v, MotionEvent event) {
+        public void onClick(View v) {
 
             ImageButton imageButton = (ImageButton)v;
 
@@ -57,8 +56,6 @@ public class RaceSelectorActivity extends ActionBarActivity {
             raceUnitSelectorActivity.putExtra(Common.launchRaceUnitSelectorActivityRaceNameKey, raceEnum);
             raceUnitSelectorActivity.putExtra(Common.launchRaceUnitSelectorActivityUnitListKey, unitList);
             startActivity(raceUnitSelectorActivity);
-
-            return true;
         }
     };
 
@@ -72,27 +69,12 @@ public class RaceSelectorActivity extends ActionBarActivity {
         this.undeadButton = (ImageButton)findViewById(R.id.undeadButton);
         this.elfButton = (ImageButton)findViewById(R.id.elfButton);
 
-        this.humanButton.setOnTouchListener(this.onRaceButtonTouchListener);
-        this.orcButton.setOnTouchListener(this.onRaceButtonTouchListener);
-        this.undeadButton.setOnTouchListener(this.onRaceButtonTouchListener);
-        this.elfButton.setOnTouchListener(this.onRaceButtonTouchListener);
+        this.humanButton.setOnClickListener(this.onRaceButtonClickListener);
+        this.orcButton.setOnClickListener(this.onRaceButtonClickListener);
+        this.undeadButton.setOnClickListener(this.onRaceButtonClickListener);
+        this.elfButton.setOnClickListener(this.onRaceButtonClickListener);
 
         this.initData();
-
-        /*Button soundTestButton = (Button)findViewById(R.id.soundTestButton);
-
-        final MediaPlayer mediaPlayer = MediaPlayer.create(this, R.raw.human_peasant_ready_to_work);
-
-        soundTestButton.setOnTouchListener(new View.OnTouchListener() {
-            @Override
-            public boolean onTouch(View v, MotionEvent event) {
-
-                mediaPlayer.start();
-
-                return true;
-            }
-        });*/
-
     }
 
     private void initData()

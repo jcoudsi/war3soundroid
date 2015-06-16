@@ -51,6 +51,7 @@ public class RaceUnitSelectorActivity extends ActionBarActivity {
         raceUnitListView.setOnItemClickListener(this.unitListOnItemClickListener);
     }
 
+
     private String getActivityTitle(RaceEnum raceEnum) {
 
         switch (raceEnum) {
