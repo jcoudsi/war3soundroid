@@ -13,7 +13,6 @@ import com.work.crazy.war3soundroid.model.Sound;
 import com.work.crazy.war3soundroid.model.Unit;
 import com.work.crazy.war3soundroid.util.Common;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 public class RaceSelectorActivity extends ActionBarActivity {
@@ -55,7 +54,7 @@ public class RaceSelectorActivity extends ActionBarActivity {
             }
 
             Intent raceUnitSelectorActivity = new Intent(RaceSelectorActivity.this, RaceUnitSelectorActivity.class);
-            raceUnitSelectorActivity.putExtra(Common.launchRaceUnitSelectorActivityRaceKey, raceEnum);
+            raceUnitSelectorActivity.putExtra(Common.launchRaceUnitSelectorActivityRaceNameKey, raceEnum);
             raceUnitSelectorActivity.putExtra(Common.launchRaceUnitSelectorActivityUnitListKey, unitList);
             startActivity(raceUnitSelectorActivity);
 

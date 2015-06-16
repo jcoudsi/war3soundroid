@@ -39,6 +39,9 @@ public class RaceUnitSoundsListActivity extends ActionBarActivity {
         setContentView(R.layout.activity_race_unit_sounds_list);
 
         Intent intent = getIntent();
+        String unitName = intent.getStringExtra(Common.launchRaceUnitSelectorActivityUnitNameKey);
+        this.setTitle(unitName);
+
         this.soundList = intent.getParcelableArrayListExtra(Common.launchRaceUnitSelectorActivitySoundListKey);
 
         ListView soundListView = (ListView)findViewById(R.id.soundListView);

@@ -3,10 +3,8 @@ package com.work.crazy.war3soundroid.activity;
 import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
-import android.view.MotionEvent;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 
@@ -30,6 +28,7 @@ public class RaceUnitSelectorActivity extends ActionBarActivity {
         public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
             Intent raceUnitSoundsListActivity = new Intent(RaceUnitSelectorActivity.this, RaceUnitSoundsListActivity.class);
+            raceUnitSoundsListActivity.putExtra(Common.launchRaceUnitSelectorActivityUnitNameKey, unitList.get(position).getName());
             raceUnitSoundsListActivity.putExtra(Common.launchRaceUnitSelectorActivitySoundListKey, unitList.get(position).getSoundList());
             startActivity(raceUnitSoundsListActivity);
         }
@@ -41,7 +40,7 @@ public class RaceUnitSelectorActivity extends ActionBarActivity {
         setContentView(R.layout.activity_race_unit_selector);
 
         Intent intent = getIntent();
-        RaceEnum raceEnum = (RaceEnum)intent.getSerializableExtra(Common.launchRaceUnitSelectorActivityRaceKey);
+        RaceEnum raceEnum = (RaceEnum)intent.getSerializableExtra(Common.launchRaceUnitSelectorActivityRaceNameKey);
         this.unitList = intent.getParcelableArrayListExtra(Common.launchRaceUnitSelectorActivityUnitListKey);
 
         setTitle(this.getActivityTitle(raceEnum));
