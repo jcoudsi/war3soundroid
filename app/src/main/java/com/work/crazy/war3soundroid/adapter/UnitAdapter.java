@@ -18,6 +18,11 @@ public class UnitAdapter extends ArrayAdapter {
 
     private ArrayList<Unit> unitList;
 
+    static class ViewHolder {
+        public TextView unitName;
+        public ImageView unitImageView;
+}
+
     public UnitAdapter(Context context, int resource, List objects) {
         super(context, resource, objects);
         this.unitList = (ArrayList<Unit>)objects;
@@ -41,17 +46,32 @@ public class UnitAdapter extends ArrayAdapter {
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
 
-        Unit unit = (Unit)this.getItem(position);
+
+
+        ViewHolder holder = null;
 
         if (convertView == null) {
+
             convertView = LayoutInflater.from(getContext()).inflate(R.layout.unit_list_item, parent, false);
+
+            holder = new ViewHolder();
+
+            holder.unitName = (TextView) convertView.findViewById(R.id.unitName);
+            holder.unitImageView = (ImageView) convertView.findViewById(R.id.unitImageView);
+
+            convertView.setTag(holder);
+
+        } else {
+
+            holder = (ViewHolder)convertView.getTag();
         }
 
-        TextView unitName = (TextView) convertView.findViewById(R.id.unitName);
-        ImageView unitImageView = (ImageView) convertView.findViewById(R.id.unitImageView);
+        Unit unit = (Unit)this.getItem(position);
 
-        unitName.setText(unit.getName());
-        unitImageView.setImageResource(unit.getImageResourceId());
+        if(unit != null) {
+            holder.unitName.setText(unit.getName());
+            holder.unitImageView.setImageResource(unit.getImageResourceId());
+        }
 
         return convertView;
     }

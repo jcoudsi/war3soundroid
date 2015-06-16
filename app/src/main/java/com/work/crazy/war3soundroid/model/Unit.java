@@ -3,10 +3,10 @@ package com.work.crazy.war3soundroid.model;
 import android.os.Parcel;
 import android.os.Parcelable;
 
-public class Unit implements Parcelable {
+import java.lang.reflect.Array;
+import java.util.ArrayList;
 
-    private String name;
-    private int imageResourceId;
+public class Unit implements Parcelable {
 
     public static final Parcelable.Creator<Unit> CREATOR = new Parcelable.Creator<Unit>() {
         @Override
@@ -19,6 +19,9 @@ public class Unit implements Parcelable {
             return new Unit[size];
         }
     };
+
+    private String name;
+    private int imageResourceId;
 
     public Unit(Parcel in) {
         this.name = in.readString();
