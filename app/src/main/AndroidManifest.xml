@@ -8,7 +8,7 @@
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
         <activity
-            android:name=".presentation.RaceSelectorActivity"
+            android:name=".activity.RaceSelectorActivity"
             android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -17,20 +17,20 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".presentation.RaceUnitSelectorActivity"
+            android:name=".activity.RaceUnitSelectorActivity"
             android:label="@string/title_activity_race_unit_selector"
-            android:parentActivityName=".presentation.RaceSelectorActivity" >
+            android:parentActivityName=".activity.RaceSelectorActivity" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".presentation.RaceSelectorActivity" />
+                android:value=".activity.RaceSelectorActivity" />
         </activity>
         <activity
-            android:name=".presentation.RaceUnitSoundsListActivity"
+            android:name=".activity.RaceUnitSoundsListActivity"
             android:label="@string/title_activity_race_unit_sounds_list"
-            android:parentActivityName=".presentation.RaceUnitSelectorActivity" >
+            android:parentActivityName=".activity.RaceUnitSelectorActivity" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".presentation.RaceUnitSelectorActivity" />
+                android:value=".activity.RaceUnitSelectorActivity" />
         </activity>
     </application>
 
