@@ -25,7 +25,7 @@
                 android:value=".presentation.RaceSelectorActivity" />
         </activity>
         <activity
-            android:name=".presentation.RaceUnitSoundsList"
+            android:name=".presentation.RaceUnitSoundsListActivity"
             android:label="@string/title_activity_race_unit_sounds_list"
             android:parentActivityName=".presentation.RaceUnitSelectorActivity" >
             <meta-data

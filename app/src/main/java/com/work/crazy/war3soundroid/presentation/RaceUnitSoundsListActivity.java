@@ -8,7 +8,7 @@ import android.view.MenuItem;
 import com.work.crazy.war3soundroid.R;
 
 
-public class RaceUnitSoundsList extends ActionBarActivity {
+public class RaceUnitSoundsListActivity extends ActionBarActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
