@@ -5,14 +5,6 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     android:paddingBottom="@dimen/activity_vertical_margin" tools:context=".RaceSelectorActivity">
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Premier son"
-        android:id="@+id/soundTestButton"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="250dp" />
-
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:orientation="vertical"
         android:layout_width="fill_parent"
@@ -28,7 +20,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:id="@+id/imageButton1"
+                android:id="@+id/humanButton"
                 android:layout_row="0"
                 android:layout_column="0"
                 android:src="@drawable/human" />
@@ -37,7 +29,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:id="@+id/imageButton2"
+                android:id="@+id/orcButton"
                 android:layout_row="0"
                 android:layout_column="1"
                 android:src="@drawable/orc" />
@@ -55,7 +47,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:id="@+id/imageButton3"
+                android:id="@+id/undeadButton"
                 android:layout_row="0"
                 android:layout_column="0"
                 android:src="@drawable/undead" />
@@ -64,7 +56,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:id="@+id/imageButton4"
+                android:id="@+id/elfButton"
                 android:layout_row="0"
                 android:layout_column="1"
                 android:src="@drawable/elf" />
