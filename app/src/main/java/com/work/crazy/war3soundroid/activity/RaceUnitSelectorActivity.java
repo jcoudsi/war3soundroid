@@ -26,17 +26,13 @@ public class RaceUnitSelectorActivity extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_race_unit_selector);
 
-        Intent i = getIntent();
-        RaceEnum raceEnum = (RaceEnum)i.getSerializableExtra(Common.launchRaceUnitSelectorActivityRaceKey);
+        Intent intent = getIntent();
+        RaceEnum raceEnum = (RaceEnum)intent.getSerializableExtra(Common.launchRaceUnitSelectorActivityRaceKey);
+        ArrayList<Unit> unitsList = intent.getParcelableArrayListExtra(Common.launchRaceUnitSelectorActivityUnitListKey);
+
         setTitle(this.getActivityTitle(raceEnum));
 
         this.raceUnitListView = (ListView)findViewById(R.id.raceUnitListView);
-
-        ArrayList<Unit> unitsList = new ArrayList<Unit>();
-        unitsList.add(new Unit("Paysan", R.drawable.human_peasant));
-        unitsList.add(new Unit("Fusiller", R.drawable.human_rifleman));
-        unitsList.add(new Unit("Chevalier", R.drawable.human_knight));
-
         ListAdapter listAdapter = new UnitAdapter(this, android.R.layout.simple_list_item_1, unitsList);
         this.raceUnitListView.setAdapter(listAdapter);
     }

@@ -9,15 +9,25 @@ import android.widget.ImageButton;
 
 import com.work.crazy.war3soundroid.R;
 import com.work.crazy.war3soundroid.model.RaceEnum;
+import com.work.crazy.war3soundroid.model.Unit;
 import com.work.crazy.war3soundroid.util.Common;
+
+import java.lang.reflect.Array;
+import java.util.ArrayList;
 
 public class RaceSelectorActivity extends ActionBarActivity {
 
     private RaceEnum raceEnum;
+
     private ImageButton humanButton;
     private ImageButton orcButton;
     private ImageButton undeadButton;
     private ImageButton elfButton;
+
+    private ArrayList<Unit> humanUnitList;
+    private ArrayList<Unit> orcUnitList;
+    private ArrayList<Unit> undeadUnitList;
+    private ArrayList<Unit> elfUnitList;
 
     private View.OnTouchListener onRaceButtonTouchListener = new View.OnTouchListener() {
 
@@ -27,19 +37,25 @@ public class RaceSelectorActivity extends ActionBarActivity {
             ImageButton imageButton = (ImageButton)v;
 
             RaceEnum raceEnum = RaceEnum.None;
+            ArrayList<Unit> unitList = new ArrayList<Unit>();
 
             if (imageButton == humanButton)  {
                 raceEnum = RaceEnum.Human;
+                unitList = humanUnitList;
             } else if (imageButton == orcButton) {
                 raceEnum = RaceEnum.Orc;
+                unitList = orcUnitList;
             } else if (imageButton == undeadButton) {
                 raceEnum = RaceEnum.Undead;
+                unitList = undeadUnitList;
             } else if (imageButton == elfButton) {
                 raceEnum = RaceEnum.Elf;
+                unitList = elfUnitList;
             }
 
             Intent raceUnitSelectorActivity = new Intent(RaceSelectorActivity.this, RaceUnitSelectorActivity.class);
             raceUnitSelectorActivity.putExtra(Common.launchRaceUnitSelectorActivityRaceKey, raceEnum);
+            raceUnitSelectorActivity.putExtra(Common.launchRaceUnitSelectorActivityUnitListKey, unitList);
             startActivity(raceUnitSelectorActivity);
 
             return true;
@@ -61,6 +77,8 @@ public class RaceSelectorActivity extends ActionBarActivity {
         this.undeadButton.setOnTouchListener(this.onRaceButtonTouchListener);
         this.elfButton.setOnTouchListener(this.onRaceButtonTouchListener);
 
+        this.initData();
+
         /*Button soundTestButton = (Button)findViewById(R.id.soundTestButton);
 
         final MediaPlayer mediaPlayer = MediaPlayer.create(this, R.raw.son1);
@@ -75,6 +93,18 @@ public class RaceSelectorActivity extends ActionBarActivity {
             }
         });*/
 
+    }
+
+    private void initData()
+    {
+        this.humanUnitList = new ArrayList<Unit>();
+        this.humanUnitList.add(new Unit("Paysan", R.drawable.human_peasant));
+        this.humanUnitList.add(new Unit("Fusiller", R.drawable.human_rifleman));
+        this.humanUnitList.add(new Unit("Chevalier", R.drawable.human_knight));
+
+        this.orcUnitList = new ArrayList<Unit>();
+        this.undeadUnitList = new ArrayList<Unit>();
+        this.elfUnitList = new ArrayList<Unit>();
     }
 
 }
