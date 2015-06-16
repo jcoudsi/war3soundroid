@@ -1,9 +1,7 @@
-package com.work.crazy.war3soundroid.presentation;
+package com.work.crazy.war3soundroid.activity;
 
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuItem;
 
 import com.work.crazy.war3soundroid.R;
 
