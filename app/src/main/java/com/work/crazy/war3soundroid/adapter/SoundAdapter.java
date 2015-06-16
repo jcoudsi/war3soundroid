@@ -9,33 +9,34 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.work.crazy.war3soundroid.R;
+import com.work.crazy.war3soundroid.model.Sound;
 import com.work.crazy.war3soundroid.model.Unit;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class UnitAdapter extends ArrayAdapter {
+public class SoundAdapter extends ArrayAdapter {
 
-    private ArrayList<Unit> unitList;
+    private ArrayList<Sound> soundList;
 
     static class ViewHolder {
         public TextView unitName;
         public ImageView unitImageView;
 }
 
-    public UnitAdapter(Context context, int resource, List objects) {
+    public SoundAdapter(Context context, int resource, List objects) {
         super(context, resource, objects);
-        this.unitList = (ArrayList<Unit>)objects;
+        this.soundList = (ArrayList<Sound>)objects;
     }
 
     @Override
     public int getCount() {
-        return this.unitList.size();
+        return this.soundList.size();
     }
 
     @Override
     public Object getItem(int position) {
-        return this.unitList.get(position);
+        return this.soundList.get(position);
     }
 
     @Override

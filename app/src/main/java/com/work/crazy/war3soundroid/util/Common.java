@@ -4,4 +4,5 @@ public class Common {
 
     public static String launchRaceUnitSelectorActivityRaceKey = "raceKey";
     public static String launchRaceUnitSelectorActivityUnitListKey = "unitListKey";
+    public static String launchRaceUnitSelectorActivitySoundListKey = "soundListKey";
 }

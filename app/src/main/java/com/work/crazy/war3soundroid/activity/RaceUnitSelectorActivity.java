@@ -3,6 +3,9 @@ package com.work.crazy.war3soundroid.activity;
 import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.view.MotionEvent;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListAdapter;
 import android.widget.ListView;
@@ -19,7 +22,18 @@ import java.util.ArrayList;
 public class RaceUnitSelectorActivity extends ActionBarActivity {
 
     private RaceEnum raceEnum;
-    private ListView raceUnitListView;
+    private ArrayList<Unit> unitList;
+
+    private AdapterView.OnItemClickListener unitListOnItemClickListener = new AdapterView.OnItemClickListener() {
+
+        @Override
+        public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+
+            Intent raceUnitSoundsListActivity = new Intent(RaceUnitSelectorActivity.this, RaceUnitSoundsListActivity.class);
+            raceUnitSoundsListActivity.putExtra(Common.launchRaceUnitSelectorActivitySoundListKey, unitList.get(position).getSoundList());
+            startActivity(raceUnitSoundsListActivity);
+        }
+    };
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,13 +42,14 @@ public class RaceUnitSelectorActivity extends ActionBarActivity {
 
         Intent intent = getIntent();
         RaceEnum raceEnum = (RaceEnum)intent.getSerializableExtra(Common.launchRaceUnitSelectorActivityRaceKey);
-        ArrayList<Unit> unitsList = intent.getParcelableArrayListExtra(Common.launchRaceUnitSelectorActivityUnitListKey);
+        this.unitList = intent.getParcelableArrayListExtra(Common.launchRaceUnitSelectorActivityUnitListKey);
 
         setTitle(this.getActivityTitle(raceEnum));
 
-        this.raceUnitListView = (ListView) findViewById(R.id.raceUnitListView);
-        ListAdapter listAdapter = new UnitAdapter(this, android.R.layout.simple_list_item_1, unitsList);
-        this.raceUnitListView.setAdapter(listAdapter);
+        ListView raceUnitListView = (ListView) findViewById(R.id.raceUnitListView);
+        ListAdapter unitListAdapter = new UnitAdapter(this, R.layout.unit_list_item, this.unitList);
+        raceUnitListView.setAdapter(unitListAdapter);
+        raceUnitListView.setOnItemClickListener(this.unitListOnItemClickListener);
     }
 
     private String getActivityTitle(RaceEnum raceEnum) {

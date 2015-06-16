@@ -9,6 +9,7 @@ import android.widget.ImageButton;
 
 import com.work.crazy.war3soundroid.R;
 import com.work.crazy.war3soundroid.model.RaceEnum;
+import com.work.crazy.war3soundroid.model.Sound;
 import com.work.crazy.war3soundroid.model.Unit;
 import com.work.crazy.war3soundroid.util.Common;
 
@@ -97,10 +98,26 @@ public class RaceSelectorActivity extends ActionBarActivity {
 
     private void initData()
     {
+        //TEMP pour test, sera dans un fichier JSON
         this.humanUnitList = new ArrayList<Unit>();
-        this.humanUnitList.add(new Unit("Paysan", R.drawable.human_peasant));
-        this.humanUnitList.add(new Unit("Fusiller", R.drawable.human_rifleman));
-        this.humanUnitList.add(new Unit("Chevalier", R.drawable.human_knight));
+
+        Unit peasant = new Unit("Paysan", R.drawable.human_peasant);
+        ArrayList<Sound> peasantSoundList = new ArrayList<Sound>();
+        peasantSoundList.add(new Sound("Prêt à travailler", R.raw.son1));
+        peasantSoundList.add(new Sound("Oui messire", R.raw.son2));
+        peasant.setSoundList(peasantSoundList);
+
+        Unit rifleman = new Unit("Fusiller", R.drawable.human_rifleman);
+        ArrayList<Sound> riflemanSoundList = new ArrayList<Sound>();
+        rifleman.setSoundList(riflemanSoundList);
+
+        Unit knight = new Unit("Chevalier", R.drawable.human_knight);
+        ArrayList<Sound> knightSoundList = new ArrayList<Sound>();
+        knight.setSoundList(knightSoundList);
+
+        this.humanUnitList.add(peasant);
+        this.humanUnitList.add(rifleman);
+        this.humanUnitList.add(knight);
 
         this.orcUnitList = new ArrayList<Unit>();
         this.undeadUnitList = new ArrayList<Unit>();
