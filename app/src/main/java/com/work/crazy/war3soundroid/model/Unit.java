@@ -20,21 +20,20 @@ public class Unit implements Parcelable {
     };
 
     private String name;
-    private int imageResourceId;
     private String resourceName;
     private ArrayList<Sound> sounds;
 
     public Unit(Parcel in) {
         this.name = in.readString();
-        this.imageResourceId = in.readInt();
         this.resourceName = in.readString();
         this.sounds = in.readArrayList(Sound.class.getClassLoader());
     }
 
-    public Unit(String name, int imageResourceId) {
+    public Unit(String name, String resourceName) {
         this.name = name;
-        this.imageResourceId = imageResourceId;
+        this.resourceName = resourceName;
     }
+
 
     public String getName() {
         return name;
@@ -42,14 +41,6 @@ public class Unit implements Parcelable {
 
     public void setName(String name) {
         this.name = name;
-    }
-
-    public int getImageResourceId() {
-        return imageResourceId;
-    }
-
-    public void setImageResourceId(int imageResourceId) {
-        this.imageResourceId = imageResourceId;
     }
 
     public ArrayList<Sound> getSounds() {
@@ -76,7 +67,6 @@ public class Unit implements Parcelable {
     @Override
     public void writeToParcel(Parcel dest, int flags) {
         dest.writeString(this.name);
-        dest.writeInt(this.imageResourceId);
         dest.writeString(this.resourceName);
         dest.writeList(this.sounds);
     }

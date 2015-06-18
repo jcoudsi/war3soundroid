@@ -18,18 +18,16 @@ public class Sound implements Parcelable {
     };
 
     private String name;
-    private int soundResourceId;
     private String resourceName;
+
+    public Sound(String name, String resourceName) {
+        this.name = name;
+        this.resourceName = resourceName;
+    }
 
     public Sound(Parcel in) {
         this.name = in.readString();
-        this.soundResourceId = in.readInt();
         this.resourceName = in.readString();
-    }
-
-    public Sound(String name, int soundResourceId) {
-        this.name = name;
-        this.soundResourceId = soundResourceId;
     }
 
     public String getName() {
@@ -38,14 +36,6 @@ public class Sound implements Parcelable {
 
     public void setName(String name) {
         this.name = name;
-    }
-
-    public int getSoundResourceId() {
-        return soundResourceId;
-    }
-
-    public void setSoundResourceId(int soundResourceId) {
-        this.soundResourceId = soundResourceId;
     }
 
     public String getResourceName() {
@@ -64,7 +54,6 @@ public class Sound implements Parcelable {
     @Override
     public void writeToParcel(Parcel dest, int flags) {
         dest.writeString(this.name);
-        dest.writeInt(this.soundResourceId);
         dest.writeString(this.resourceName);
     }
 }
