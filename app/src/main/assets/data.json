@@ -5,7 +5,7 @@
       "resourceName": "human_peasant",
       "sounds": [
         {
-          "name": "Pret a travailler",
+          "name": "Prêt à travailler",
           "resourceName": "human_peasant_ready_to_work"
         },
         {
