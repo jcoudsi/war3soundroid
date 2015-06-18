@@ -29,7 +29,7 @@ public class RaceUnitSelectorActivity extends ActionBarActivity {
 
             Intent raceUnitSoundsListActivity = new Intent(RaceUnitSelectorActivity.this, RaceUnitSoundsListActivity.class);
             raceUnitSoundsListActivity.putExtra(Common.launchRaceUnitSelectorActivityUnitNameKey, unitList.get(position).getName());
-            raceUnitSoundsListActivity.putExtra(Common.launchRaceUnitSelectorActivitySoundListKey, unitList.get(position).getSoundList());
+            raceUnitSoundsListActivity.putExtra(Common.launchRaceUnitSelectorActivitySoundListKey, unitList.get(position).getSounds());
             startActivity(raceUnitSoundsListActivity);
         }
     };

@@ -1,16 +1,16 @@
 {
-  "human": [
+  "humans": [
     {
       "name": "Peasant",
       "resourceName": "human_peasant",
       "sounds": [
         {
-          "name": "Prêt à travailler",
-          "resourceName": "ready_to_work"
+          "name": "Pret a travailler",
+          "resourceName": "human_peasant_ready_to_work"
         },
         {
           "name": "Oui messire",
-          "resourceName": "yes_mylord"
+          "resourceName": "human_peasant_yes_mylord"
         }
       ]
     },

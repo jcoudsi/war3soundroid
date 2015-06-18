@@ -3,7 +3,6 @@ package com.work.crazy.war3soundroid.model;
 import android.os.Parcel;
 import android.os.Parcelable;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 public class Unit implements Parcelable {
@@ -22,12 +21,14 @@ public class Unit implements Parcelable {
 
     private String name;
     private int imageResourceId;
-    private ArrayList<Sound> soundList;
+    private String resourceName;
+    private ArrayList<Sound> sounds;
 
     public Unit(Parcel in) {
         this.name = in.readString();
         this.imageResourceId = in.readInt();
-        this.soundList = in.readArrayList(Sound.class.getClassLoader());
+        this.resourceName = in.readString();
+        this.sounds = in.readArrayList(Sound.class.getClassLoader());
     }
 
     public Unit(String name, int imageResourceId) {
@@ -51,12 +52,20 @@ public class Unit implements Parcelable {
         this.imageResourceId = imageResourceId;
     }
 
-    public ArrayList<Sound> getSoundList() {
-        return soundList;
+    public ArrayList<Sound> getSounds() {
+        return sounds;
     }
 
-    public void setSoundList(ArrayList<Sound> soundList) {
-        this.soundList = soundList;
+    public void setSounds(ArrayList<Sound> sounds) {
+        this.sounds = sounds;
+    }
+
+    public String getResourceName() {
+        return resourceName;
+    }
+
+    public void setResourceName(String resourceName) {
+        this.resourceName = resourceName;
     }
 
     @Override
@@ -68,6 +77,7 @@ public class Unit implements Parcelable {
     public void writeToParcel(Parcel dest, int flags) {
         dest.writeString(this.name);
         dest.writeInt(this.imageResourceId);
-        dest.writeList(this.soundList);
+        dest.writeString(this.resourceName);
+        dest.writeList(this.sounds);
     }
 }
