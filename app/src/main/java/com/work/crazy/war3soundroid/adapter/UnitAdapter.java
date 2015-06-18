@@ -17,6 +17,7 @@ import java.util.List;
 public class UnitAdapter extends ArrayAdapter {
 
     private ArrayList<Unit> unitList;
+    private Context context;
 
     static class ViewHolder {
         public TextView unitName;
@@ -25,6 +26,7 @@ public class UnitAdapter extends ArrayAdapter {
 
     public UnitAdapter(Context context, int resource, List objects) {
         super(context, resource, objects);
+        this.context = context;
         this.unitList = (ArrayList<Unit>)objects;
     }
 
@@ -68,7 +70,8 @@ public class UnitAdapter extends ArrayAdapter {
 
         if (unit != null) {
             holder.unitName.setText(unit.getName());
-            holder.unitImageView.setImageResource(unit.getImageResourceId());
+            int imageResourceId = context.getResources().getIdentifier(unit.getResourceName(), "drawable", context.getPackageName());
+            holder.unitImageView.setImageResource(imageResourceId);
         }
 
         return convertView;

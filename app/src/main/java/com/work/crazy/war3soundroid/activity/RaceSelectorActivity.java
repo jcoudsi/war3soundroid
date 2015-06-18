@@ -120,27 +120,6 @@ public class RaceSelectorActivity extends ActionBarActivity {
             this.humanUnitList = responseObject.getHumans();
         }
 
-        //TEMP pour test, sera dans un fichier JSON
-        /*this.humanUnitList = new ArrayList<Unit>();
-
-        Unit peasant = new Unit("Paysan", R.drawable.human_peasant);
-        ArrayList<Sound> peasantSoundList = new ArrayList<Sound>();
-        peasantSoundList.add(new Sound("Prêt à travailler", R.raw.human_peasant_ready_to_work));
-        peasantSoundList.add(new Sound("Oui messire", R.raw.human_peasant_yes_mylord));
-        peasant.setSounds(peasantSoundList);
-
-        Unit rifleman = new Unit("Fusiller", R.drawable.human_rifleman);
-        ArrayList<Sound> riflemanSoundList = new ArrayList<Sound>();
-        rifleman.setSounds(riflemanSoundList);
-
-        Unit knight = new Unit("Chevalier", R.drawable.human_knight);
-        ArrayList<Sound> knightSoundList = new ArrayList<Sound>();
-        knight.setSounds(knightSoundList);
-
-        this.humanUnitList.add(peasant);
-        this.humanUnitList.add(rifleman);
-        this.humanUnitList.add(knight);
-*/
     }
 
 }

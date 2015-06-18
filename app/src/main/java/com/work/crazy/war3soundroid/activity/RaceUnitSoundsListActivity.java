@@ -29,7 +29,6 @@ public class RaceUnitSoundsListActivity extends ActionBarActivity {
         public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
             int soundResourceId = getResources().getIdentifier(soundList.get(position).getResourceName(), "raw", getPackageName());
-            //final MediaPlayer mediaPlayer = MediaPlayer.create(context, soundList.get(position).getSoundResourceId());
             final MediaPlayer mediaPlayer = MediaPlayer.create(context, soundResourceId);
             mediaPlayer.start();
         }
