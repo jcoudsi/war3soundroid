@@ -1,27 +1,95 @@
 {
   "humans": [
     {
+      "name": "Knight",
+      "resourceName": "human_knight",
+      "sounds": []
+    },
+    {
       "name": "Peasant",
       "resourceName": "human_peasant",
       "sounds": [
+        {
+          "name": "Bien",
+          "resourceName": "human_peasant_ok"
+        },
+        {
+          "name": "Ca y est, je suis mort",
+          "resourceName": "human_peasant_i_am_dead"
+        },
+        {
+          "name": "Encore du travail ?",
+          "resourceName": "human_peasant_work_again"
+        },
+        {
+          "name": "Il essaye de faire de l'humour",
+          "resourceName": "human_peasant_try_to_joke"
+        },
+        {
+          "name": "Il est bon, c'est un champion du monde !",
+          "resourceName": "human_peasant_he_is_good"
+        },
+        {
+          "name": "Il pourrait me faire l'historique de la louche à travers les âges",
+          "resourceName": "human_peasant_he_could_tell_me_ladle_story"
+        },
+        {
+          "name": "Je m'en charge",
+          "resourceName": "human_peasant_i_do_it"
+        },
+        {
+          "name": "Je peux essayer",
+          "resourceName": "human_peasant_i_can_try"
+        },
+        {
+          "name": "Ne m'invitez jamais à dîner, j'aurai toujours un doute",
+          "resourceName": "human_peasant_dont_invite_me_for_dinner"
+        },
+        {
+          "name": "Oui messire",
+          "resourceName": "human_peasant_yes_mylord"
+        },
+        {
+          "name": "Oui monseigneur",
+          "resourceName": "human_peasant_yes_mylord2"
+        },
+        {
+          "name": "Pardon ?",
+          "resourceName": "human_peasant_sorry"
+        },
+        {
+          "name": "Pleure",
+          "resourceName": "human_peasant_cry"
+        },
         {
           "name": "Prêt à travailler",
           "resourceName": "human_peasant_ready_to_work"
         },
         {
-          "name": "Oui messire",
-          "resourceName": "human_peasant_yes_mylord"
+          "name": "Qu'y a-t-il ?",
+          "resourceName": "human_peasant_what"
+        },
+        {
+          "name": "Si vous le voulez vraiment",
+          "resourceName": "human_peasant_if_you_want_really"
+        },
+        {
+          "name": "Très bien",
+          "resourceName": "human_peasant_very_good"
+        },
+        {
+          "name": "Votre prénom, c'est François, c'est juste ?",
+          "resourceName": "human_peasant_your_name_is_francois"
+        },
+        {
+          "name": "Vous n'avez personne d'autre ?",
+          "resourceName": "human_peasant_you_dont_have_anyone_else"
         }
       ]
     },
     {
       "name": "Rifle man",
       "resourceName": "human_rifleman",
-      "sounds": []
-    },
-    {
-      "name": "Knight",
-      "resourceName": "human_knight",
       "sounds": []
     }
   ]
